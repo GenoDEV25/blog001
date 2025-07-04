@@ -3,13 +3,13 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="<?= base_url('assets/css/footer.css') ?>" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('assets/css/header.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/index_admin.css') ?>">
-    <link rel="stylesheet" href="<?= base_url('assets/css/modal_styles.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/create_modal.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/edit_modal.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/delete_modal.css') ?>">
@@ -23,7 +23,7 @@
     <div class="container admin-container">
         <!-- Título y botón de añadir -->
         <div class="admin-header">
-            <h2 class="admin-title">Administrar Blogs</h2>
+            <h2 class="admin-title"> .</h2>
             <button class="btn-add desktop-only" data-bs-toggle="modal" data-bs-target="#modalCrear">Añadir</button>
             <div class="mobile-only">
                 <button class="btn-add" data-bs-toggle="modal" data-bs-target="#modalCrear">Añadir</button>

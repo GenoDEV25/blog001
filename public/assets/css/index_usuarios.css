@@ -1,82 +1,119 @@
-/* Layout principal */
+/* General */
 html, body {
     height: 100%;
+    margin: 0;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 .content-wrapper {
+    padding: 0;
     flex: 1;
-    padding-bottom: 30px;
 }
 
-/* Posts */
+.container {
+    margin-top: 0rem;
+    padding: 0 1rem 3rem 1rem;
+    max-width: 98%;
+    width: 100%;
+}
+
+/* Grid de posts */
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    column-gap: 1.5rem;   /* Espacio entre columnas (izquierda/derecha) */
+    row-gap: 0.75rem;
 }
 
-/* Tarjetas de los posts */
+/* Mostrar 4 tarjetas por fila en pantallas grandes */
+@media (min-width: 1200px) {
+    .posts-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tarjeta individual */
 .post-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Imagen de un post - Forma cuadrado */
+/* Imagen superior */
 .post-card-image {
     width: 100%;
-    height: 250px;
+    height: 190px;
     object-fit: cover;
     display: block;
+    border-radius: 2rem;
 }
 
+/* Contenido de la tarjeta */
 .post-card-body {
-    padding: 1.5rem;
-    flex-grow: 1;
+    padding: 0.75rem 1rem;
     display: flex;
     flex-direction: column;
+    height: calc(100% - 200px);
 }
 
-/* Título del post */
+/* Título */
 .post-card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #333;
+    font-size: 1.0rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #444;
+    margin-bottom: 0.3rem;
     line-height: 1.3;
 }
 
-/* Categoria del post */
+/* Categoría */
 .post-card-category {
     color: #6c757d;
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
+    font-size: 0.80rem;
     font-weight: 500;
+    margin-bottom: 0.2rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-/*Fecha del post*/
+/* Fecha */
 .post-card-date {
     color: #6c757d;
-    font-size: 0.85rem;
+    font-size: 0.80rem;
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: auto;
     margin-bottom: 0;
+}
+
+/* Botón de vista (ícono de ojo) */
+.view-btn {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.view-btn:hover {
+    background: rgba(230, 230, 230, 0.95);
 }
 
 /* Estado vacío */
@@ -100,29 +137,15 @@ body {
     font-size: 1.1rem;
 }
 
-/* Responsive */
+/* Ajustar altura de imágenes en pantallas pequeñas */
 @media (max-width: 768px) {
-    .posts-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    .post-card-body {
-        padding: 1rem;
-    }
-
     .post-card-image {
-        height: 200px;
+        height: 280px;
     }
 }
 
-@media (max-width: 576px) {
-    .content-wrapper {
-        padding-bottom: 20px;
-    }
-
-    .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
+@media (max-width: 480px) {
+    .post-card-image {
+        height: 320px;
     }
 }
