@@ -1,8 +1,4 @@
 /* Contenedor */
-body {
-    background-color: #f4f4f4;
-}
-
 .center-container {
     min-height: 100vh;
     display: flex;
@@ -17,21 +13,19 @@ body {
     text-align: center;
 }
 
-/* Botones de selección */
+/* Seccion de botones */
 .home-buttons-section {
     display: flex;
     gap: 1.5rem;
 }
 
+/* Botones */
 .btn-main {
     background-color: #000;
     color: #fff;
     padding: 1rem 2rem;
     font-size: 1.25rem;
-    border: none;
-    border-radius: 0.3rem;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
+    border-radius: 0.5rem;
     display: inline-block;
 }
 

@@ -1,4 +1,7 @@
 <?php helper('url'); ?>
+
+<!-- Pagina principal -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,7 +13,7 @@
 <body>
 
 <div class="center-container">
-    <h1 class="home-title">Bienvenido a Mini Blog</h1>
+    <h1 class="home-title">Bienvenido a BlogLogo</h1>
     <div class="home-buttons-section">
         <a href="<?= base_url('/admin/blog') ?>" class="btn-main">Administrador</a>
         <a href="<?= base_url('blog') ?>" class="btn-main">Usuario</a>
